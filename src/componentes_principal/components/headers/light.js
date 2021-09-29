@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
+import { Link } from "react-router-dom";
 
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler";
 
@@ -12,7 +13,7 @@ import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 
 const Header = tw.header`
   flex justify-between items-center
-  max-w-screen-xl mx-auto
+  max-w-screen-xl mx-auto 
 `;
 
 export const NavLinks = tw.div`inline-block`;
@@ -20,16 +21,23 @@ export const NavLinks = tw.div`inline-block`;
 /* hocus: stands for "on hover or focus"
  * hocus:bg-primary-700 will apply the bg-primary-700 class on hover or focus
  */
-export const NavLink = tw.a`
-  text-lg my-2 lg:text-sm lg:mx-6 lg:my-0 text-green-500
+export const NavLink = tw.span`
+  text-lg my-2 lg:text-sm lg:mx-6 lg:my-0 text-secondary-500
   font-semibold tracking-wide transition duration-300
   pb-1 border-b-2 border-transparent hover:border-green-500 hocus:text-green-500
-`; //LOGO
+`; //Menu
 
-export const PrimaryLink = tw(NavLink)`
+export const PrimaryLink = tw.span(NavLink)`
   lg:mx-0
-  px-8 py-3 rounded bg-green-500 text-green-100
-  hocus:bg-green-700 hocus:text-green-200 focus:shadow-outline
+  px-8 py-3 rounded bg-green-600 text-gray-100
+  hocus:bg-green-800 hocus:text-green-200 focus:shadow-outline
+  border-b-0
+`;
+
+export const SecundaryLink = tw.span(NavLink)`
+  lg:mx-0
+  px-8 py-3 rounded bg-gray-300 text-gray-600
+  hocus:bg-gray-400 hocus:text-gray-700 focus:shadow-outline
   border-b-0
 `;
 
@@ -43,7 +51,7 @@ export const LogoLink = styled(NavLink)`
 
 export const MobileNavLinksContainer = tw.nav`flex flex-1 items-center justify-between`;
 export const NavToggle = tw.button`
-  lg:hidden z-20 focus:outline-none hocus:text-green-500 transition duration-300
+  lg:hidden z-20 focus:outline-none hocus:text-gray-500 transition duration-300
 `;
 export const MobileNavLinks = motion(styled.div`
   ${tw`lg:hidden z-10 fixed top-0 inset-x-0 mx-4 my-6 p-8 border text-center rounded-lg text-gray-900 bg-white`}
@@ -72,14 +80,12 @@ const Light = ({ roundedHeaderButton = false, logoLink, links, className, collap
    */
   const defaultLinks = [
     <NavLinks key={1}>
-      <NavLink href="/#">About</NavLink>
-      <NavLink href="/#">Blog</NavLink>
-      <NavLink href="/#">Pricing</NavLink>
-      <NavLink href="/#">Contact Us</NavLink>
-      <NavLink href="/#" tw="lg:ml-12!">
-        Login
-      </NavLink>
-      <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/#">Sign Up</PrimaryLink>
+      <NavLink><Link to="/elalgarrobo.com.ar/inicio">Inicio</Link></NavLink>
+      <NavLink><Link to="/elalgarrobo.com.ar/alojamientos">Alojamientos</Link></NavLink>
+      <NavLink><Link to="#">Consulta</Link></NavLink>
+      <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} tw="lg:mx-2!"><Link to="/elalgarrobo.com.ar/login">Iniciar Sesión
+      </Link></PrimaryLink>
+      <SecundaryLink css={roundedHeaderButton && tw`rounded-full`}><Link to="/elalgarrobo.com.ar/register">Registrarse</Link></SecundaryLink>
     </NavLinks>
   ];
 
@@ -89,7 +95,7 @@ const Light = ({ roundedHeaderButton = false, logoLink, links, className, collap
   const defaultLogoLink = (
     <LogoLink href="/">
       <img src={logo} alt="logo" />
-      El Algarrobo
+      <span tw="text-green-600"> El Algarrobo</span>
     </LogoLink>
   );
 

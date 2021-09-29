@@ -57,12 +57,12 @@ const Description = tw.p`text-sm leading-loose mt-2 sm:mt-4`;
 const SecondaryInfoContainer = tw.div`flex flex-col sm:flex-row mt-2 sm:mt-4`;
 const IconWithText = tw.div`flex items-center mr-6 my-2 sm:my-0`;
 const IconContainer = styled.div`
-  ${tw`inline-block rounded-full p-2 bg-green-700 text-green-100`}
+  ${tw`inline-block rounded-full p-2 bg-green-600 text-gray-100`}
   svg {
     ${tw`w-3 h-3`}
   }
 `;
-const Text = tw.div`ml-2 text-sm font-semibold text-green-800`;
+const Text = tw.div`ml-2 text-sm font-semibold`;
 
 const PrimaryButton = tw(PrimaryButtonBase)`mt-auto sm:text-lg rounded-none w-full rounded sm:rounded-none sm:rounded-br-4xl py-3 sm:py-6`;
 const Three = () => {
@@ -113,7 +113,7 @@ const Three = () => {
     },
     {
       imageSrc: "https://fotos.alquilerargentina.com/v7/propiedades/hl34/o_hl34_Complejo_69LLLGS9.jpg?p=galeria_lg",
-      title: "Departamento 11",
+      title: "Departamento Nº 11",
       description: "El alojamiento cuenta con 2 dormitorios, 1 baños, cochera. Para una estadía cómoda y confortable nuestro alojamiento El Algarrobo cuenta con Internet, Ropa Blanca, Ropa De Cama, Desayuno, Servicio De Limpieza y otros servicios.",
       userText: "4 a 5 Per.",
       rating: 4.5,
@@ -139,26 +139,30 @@ const Three = () => {
                   <Title>{card.title}</Title>
                 </TitleReviewContainer>
                 <SecondaryInfoContainer>
+                
                   <IconWithText>
                     <IconContainer>
                       <Wifi />
                     </IconContainer>
                   </IconWithText>
+
                   <IconWithText>
                     <IconContainer>
                       <TV />
                     </IconContainer>
                   </IconWithText>
+
                   <IconWithText>
                     <IconContainer>
                       <Users />
                     </IconContainer>
                     <Text>{card.userText}</Text>
                   </IconWithText>
+
                 </SecondaryInfoContainer>
                 <Description>{card.description}</Description>
               </TextInfo>
-              <PrimaryButton>Consultar</PrimaryButton>
+              <PrimaryButton>Más información</PrimaryButton>
             </Card>
           ))}
         </CardSlider>
