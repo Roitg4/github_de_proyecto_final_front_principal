@@ -26,6 +26,7 @@ module.exports = {
         700: '#5011cc',
         800: '#460fb3',
         900: '#3c0d99',
+        1000:'#2094FE', //Boton azul links
       },
 
       secondary: {
@@ -62,6 +63,7 @@ module.exports = {
         700: '#c53030',
         800: '#9b2c2c',
         900: '#742a2a',
+        1000:'#A00D0D' //Boton oscuro
       },
       orange: {
         100: '#fffaf0',
@@ -95,6 +97,8 @@ module.exports = {
         700: '#2f855a',
         800: '#276749',
         900: '#22543d',
+        1000:'#0FBA35', //Verde claro boton
+        1100:'#1C7029', //Verde oscuro boton
       },
       teal: {
         100: '#e6fffa',

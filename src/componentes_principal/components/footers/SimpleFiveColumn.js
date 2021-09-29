@@ -8,6 +8,8 @@ import { ReactComponent as FacebookIcon } from "../../images/facebook-icon.svg";
 import { ReactComponent as TwitterIcon } from "../../images/twitter-icon.svg";
 import { ReactComponent as YoutubeIcon } from "../../images/youtube-icon.svg";
 
+import { Link } from "react-router-dom";
+
 const Container = tw.div`relative bg-gray-200 -mx-8 -mb-8 px-8`;
 const FiveColumns = tw.div`max-w-screen-xl mx-auto py-16 lg:py-20 flex flex-wrap justify-between`;
 
@@ -18,17 +20,18 @@ const ColumnHeading = tw.h5`font-bold`;
 
 const LinkList = tw.ul`mt-4 text-sm font-medium`;
 const LinkListItem = tw.li`mt-3`;
-const Link = tw.a`border-b-2 border-transparent hocus:text-green-500 hocus:border-green-500 pb-1 transition duration-300`;
+
+const LinksEstilo = tw.span`border-b-2 border-transparent hocus:text-green-500 hocus:border-green-500 pb-1 transition duration-300`;
 
 const LogoContainer = tw.div`flex items-center justify-center md:justify-start`;
 const LogoImg = tw.img`w-8`;
-const LogoText = tw.h5`ml-2 text-xl font-black text-green-500`;
+const LogoText = tw.h5`ml-2 text-xl font-black text-green-600`;
 
 const CompanyDescription = tw.p`mt-4 max-w-xs font-medium text-sm mx-auto md:mx-0 md:mr-4 `;
 
 const SocialLinksContainer = tw.div`mt-4 `;
 const SocialLink = styled.a`
-  ${tw`cursor-pointer inline-block p-2 rounded-full bg-green-700 text-green-100 hover:bg-green-900 transition duration-300 mr-4`}
+  ${tw`cursor-pointer inline-block p-2 rounded-full bg-green-600 text-gray-100 hover:bg-green-800 transition duration-300 mr-4`}
   svg {
     ${tw`w-4 h-4`}
   }
@@ -44,16 +47,16 @@ const Footer = () => {
             <LogoText>El Algarrobo.</LogoText>
           </LogoContainer>
           <CompanyDescription>
-            El Algarrobo es una empresa S.R.L de un Complejo Vacacional que ofrece a sus huespedes los mejores servicios .
+            El Algarrobo es una empresa S.R.L de un Complejo Vacacional que ofrece a sus huespedes los mejores servicios de hoteleria.
           </CompanyDescription>
           <SocialLinksContainer>
-            <SocialLink href="https://facebook.com">
+            <SocialLink target={"_blank"} href="https://facebook.com">
               <FacebookIcon />
             </SocialLink>
-            <SocialLink href="https://twitter.com">
+            <SocialLink target={"_blank"} href="https://twitter.com">
               <TwitterIcon />
             </SocialLink>
-            <SocialLink href="https://youtube.com">
+            <SocialLink target={"_blank"} href="https://youtube.com">
               <YoutubeIcon />
             </SocialLink>
           </SocialLinksContainer>
@@ -62,13 +65,13 @@ const Footer = () => {
           <ColumnHeading>Enlaces rápidos</ColumnHeading>
           <LinkList>
             <LinkListItem>
-              <Link href="#">Inicio</Link>
+              <Link to="/elalgarrobo.com.ar/inicio"><LinksEstilo>Inicio</LinksEstilo></Link>
             </LinkListItem>
             <LinkListItem>
-              <Link href="#">Alojamientos</Link>
+              <Link to="#"><LinksEstilo>Alojamientos</LinksEstilo></Link>
             </LinkListItem>
             <LinkListItem>
-              <Link href="#">Contacto</Link>
+              <Link to="#"><LinksEstilo>Contacto</LinksEstilo></Link>
             </LinkListItem>
           </LinkList>
         </Column>
@@ -76,10 +79,10 @@ const Footer = () => {
           <ColumnHeading>Acciones</ColumnHeading>
           <LinkList>
             <LinkListItem>
-              <Link href="#">Iniciar Sesión</Link>
+              <Link to="/elalgarrobo.com.ar/login"><LinksEstilo>Iniciar Sesión</LinksEstilo></Link>
             </LinkListItem>
             <LinkListItem>
-              <Link href="#">Registrarse</Link>
+              <Link to="/elalgarrobo.com.ar/register"><LinksEstilo>Registrarse</LinksEstilo></Link>
             </LinkListItem>
           </LinkList>
         </Column>
@@ -87,13 +90,13 @@ const Footer = () => {
           <ColumnHeading>Legal</ColumnHeading>
           <LinkList>
             <LinkListItem>
-              <Link href="#">SGC</Link>
+              <Link to="#">SGC</Link>
             </LinkListItem>
             <LinkListItem>
-              <Link href="#">Política de Privacidad</Link>
+              <Link to="/elalgarrobo.com.ar/politica-de-privacidad"><LinksEstilo>Política de Privacidad</LinksEstilo></Link>
             </LinkListItem>
             <LinkListItem>
-              <Link href="#">Terminos y Condiciones</Link>
+              <Link to="/elalgarrobo.com.ar/terminos-y-condiciones"><LinksEstilo>Terminos y Condiciones</LinksEstilo></Link>
             </LinkListItem>
           </LinkList>
         </Column>
