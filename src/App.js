@@ -10,15 +10,16 @@ import {
 
 //MIS COMPONENTES_PRINCIPAL
 import Inicio from './componentes_principal/demos/Inicio';
-import Alojamientos from './componentes_principal/demos/alojamientos';
+import Contacto from './componentes_principal/demos/consultas';
+import Alojamiento_Detalle from './componentes_principal/demos/alojamientoDetalles';
 import Error from './componentes_principal/demos/error404';
 
 //COMPONENTES UTILES
-import Privacy from './componentes_principal/components/privacy_and_terms/PrivacyPolicy';
-import Terms from './componentes_principal/components/privacy_and_terms/TermsOfService';
+import Privacy from './componentes_principal/demos/PrivacyPolicy';
+import Terms from './componentes_principal/demos/TermsOfService';
 
-import Login from './componentes_principal/components/login_and_register/Login';
-import Register from './componentes_principal/components/login_and_register/Register';
+/* import Login from './componentes_principal/components/login_and_register/Login';
+import Register from './componentes_principal/components/login_and_register/Register'; */
 
 function App() {
   return (
@@ -31,15 +32,13 @@ function App() {
 
             <Switch>
 
-              <Route path="/elalgarrobo.com.ar/register" component={Register} />
-
-              <Route path="/elalgarrobo.com.ar/login" component={Login} />
-
               <Route path="/elalgarrobo.com.ar/terminos-y-condiciones" component={Terms} />
 
               <Route path="/elalgarrobo.com.ar/politica-de-privacidad" component={Privacy} />
 
-              <Route path="/elalgarrobo.com.ar/alojamientos" component={Alojamientos} />
+              <Route path="/elalgarrobo.com.ar/alojamiento-detalle" component={Alojamiento_Detalle} />
+
+              <Route path="/elalgarrobo.com.ar/consulta-y-contacto" component={Contacto} />
 
               <Route path="/elalgarrobo.com.ar/inicio" component={Inicio} />
 

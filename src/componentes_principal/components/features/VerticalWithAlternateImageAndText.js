@@ -39,7 +39,7 @@ const Vertical = () => {
         "https://www.requena.es/sites/www.requena.es/files/styles/interior_contenido_/public/Apertura%20piscina%20grande%20Requena.JPG?itok=GRL4OoHa",
       title: "Área Piscina",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "Medidas: 20m x 5m x 1,60m. Piscina con Solarium húmedo, tobogán de 2 metros de altura. "
     },
 
     {
@@ -47,7 +47,7 @@ const Vertical = () => {
         "https://areaurbana.com/wp-content/uploads/2018/03/%C2%BFC%C3%B3mo-se-hace-una-cancha-de-tenis-1.jpg",
       title: "Cancha de Tenis",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "2 canchas de polvo de ladrillo con iluminación nocturna."
     },
 
     {
@@ -55,7 +55,7 @@ const Vertical = () => {
         "https://img.freepik.com/foto-gratis/vista-lateral-mujer-hombre-jugando-voleibol-playa_23-2148662639.jpg?size=626&ext=jpg&ga=GA1.2.2038404213.1629590400",
       title: "Cancha de Voley",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "Medidas: 18m x 9m. 1 cancha de arena con red"
     }
   ];
 
@@ -65,7 +65,7 @@ const Vertical = () => {
         <HeadingInfoContainer>
           <HeadingTitle>Actividades Recreativas</HeadingTitle>
           <HeadingDescription>
-          Estos son algunos de las actividades más divertidas que podrá realizar en su estadía. 
+          Estas son algunas de las actividades más divertidas que podrá realizar en su estadía. 
           </HeadingDescription>
         </HeadingInfoContainer>
 

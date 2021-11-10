@@ -83,7 +83,7 @@ const Two = ({
       profileImageSrc:
         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3.25&w=512&h=512&q=80",
       quote:
-        "Con gran satisfacción puedo afirmar la calidad y efectividad del servicio recibido. Excelente atención del personal, completamente recomendado. Volveré para las próximas vacaciones.",
+        "Con gran satisfacción puedo afirmar la calidad y efectividad del servicio recibido. Excelente atención del personal, completamente recomendado. Volveré para mis próximas vacaciones.",
       customerName: "Eugenia 	Fernandez",
       customerTitle: "Huesped reciente"
     },
@@ -93,7 +93,7 @@ const Two = ({
       profileImageSrc:
         "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=512&h=512&q=80",
       quote:
-      "Con gran satisfacción puedo afirmar la calidad y efectividad del servicio recibido. Excelente atención del personal, completamente recomendado. Volveré para las próximas vacaciones.",
+      "Con gran satisfacción puedo afirmar la calidad y efectividad del servicio recibido. Excelente atención del personal, completamente recomendado. Volveré para mis próximas vacaciones.",
       customerName: "Santiago Gonzalez",
       customerTitle: "Huesped habitual"
     }

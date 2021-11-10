@@ -4,7 +4,6 @@ import "styled-components";
 
 export default function error404() {
 
-    //className="w-full h-full bg-no-repeat bg-cover"
     return (<>
 
         <div 

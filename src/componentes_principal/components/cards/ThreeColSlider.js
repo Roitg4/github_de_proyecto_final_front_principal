@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
 import tw from "twin.macro";
 import styled from "styled-components";
@@ -9,6 +9,8 @@ import { ReactComponent as ChevronRightIcon } from "feather-icons/dist/icons/che
 import { ReactComponent as Wifi } from "feather-icons/dist/icons/wifi.svg";
 import { ReactComponent as Users } from "feather-icons/dist/icons/user.svg";
 import { ReactComponent as TV } from "feather-icons/dist/icons/tv.svg";
+
+import * as extraService from '../../servicios/extra.service';
 
 const Container = tw.div`relative`;
 const Content = tw.div`max-w-screen-xl mx-auto py-16 lg:py-20`;
@@ -44,18 +46,10 @@ const TextInfo = tw.div`py-6 sm:px-10 sm:py-6`;
 const TitleReviewContainer = tw.div`flex flex-col sm:flex-row sm:justify-between sm:items-center`;
 const Title = tw.h5`text-2xl font-bold`;
 
-/* const RatingsInfo = styled.div`
-  ${tw`flex items-center sm:ml-4 mt-2 sm:mt-0`}
-  svg {
-    ${tw`w-6 h-6 text-yellow-500 fill-current`}
-  }
-`;
-const Rating = tw.span`ml-2 font-bold`; */
-
 const Description = tw.p`text-sm leading-loose mt-2 sm:mt-4`;
 
 const SecondaryInfoContainer = tw.div`flex flex-col sm:flex-row mt-2 sm:mt-4`;
-const IconWithText = tw.div`flex items-center mr-6 my-2 sm:my-0`;
+const IconWithText = tw.div`flex space-x-4 items-center mr-6 my-2 sm:my-0`;
 const IconContainer = styled.div`
   ${tw`inline-block rounded-full p-2 bg-green-600 text-gray-100`}
   svg {
@@ -88,37 +82,30 @@ const Three = () => {
     ]
   };
 
-  /* Change this according to your needs */
-  const cards = [
-    {
-      imageSrc: "https://fotos.alquilerargentina.com/v7/propiedades/hl34/o_hl34_Complejo_77TX7W2F.jpg?p=galeria_lg",
-      title: "Cabaña Nº 4",
-      description: "El alojamiento cuenta con 2 dormitorios, 1 baños, cochera. Para una estadía cómoda y confortable nuestro alojamiento El Algarrobo cuenta con Internet, Ropa Blanca, Ropa De Cama, Desayuno, Servicio De Limpieza y otros servicios.",
-      userText: "2 a 4 Per.",
-      rating: "4.8",
-    },
-    {
-      imageSrc: "https://fotos.alquilerargentina.com/v7/propiedades/hl34/o_hl34_Complejo_3TN9LXHY.jpg?p=galeria_lg",
-      title: "Cabaña Nº 8",
-      description: "El alojamiento cuenta con 2 dormitorios, 1 baños, cochera. Para una estadía cómoda y confortable nuestro alojamiento El Algarrobo cuenta con Internet, Ropa Blanca, Ropa De Cama, Desayuno, Servicio De Limpieza y otros servicios.",
-      userText: "4 a 6 Per.",
-      rating: 4.9,
-    },
-    {
-      imageSrc: "https://fotos.alquilerargentina.com/v7/propiedades/hl34/o_hl34_Complejo_WHWL54O1.jpg?p=galeria_lg",
-      title: "Cabaña Nº 9",
-      description: "El alojamiento cuenta con 2 dormitorios, 1 baños, cochera. Para una estadía cómoda y confortable nuestro alojamiento El Algarrobo cuenta con Internet, Ropa Blanca, Ropa De Cama, Desayuno, Servicio De Limpieza y otros servicios.",
-      userText: "4 a 6 Per.",
-      rating: "5.0",
-    },
-    {
-      imageSrc: "https://fotos.alquilerargentina.com/v7/propiedades/hl34/o_hl34_Complejo_69LLLGS9.jpg?p=galeria_lg",
-      title: "Departamento Nº 11",
-      description: "El alojamiento cuenta con 2 dormitorios, 1 baños, cochera. Para una estadía cómoda y confortable nuestro alojamiento El Algarrobo cuenta con Internet, Ropa Blanca, Ropa De Cama, Desayuno, Servicio De Limpieza y otros servicios.",
-      userText: "4 a 5 Per.",
-      rating: 4.5,
-    },
-  ]
+  /* METODO MOSTRAR TODOS */
+  const [alojamientos, setGuardarAlojamientos] = useState([]);
+  const [alojamientoTipo, setAlojamientoTipo] = useState([]);
+
+  const [boolCargando, setBoolCargando] = useState(false);
+
+  useEffect(() => {
+
+    if (!boolCargando) {
+
+      setBoolCargando(true);
+
+      extraService.listaAlojamiento_get().then(res => {
+
+        setGuardarAlojamientos(res)
+      })
+
+      extraService.listaTipoAlojamiento_get().then(res => {
+
+        setAlojamientoTipo(res)
+      })
+
+    }
+  }, [alojamientos, boolCargando]);
 
   return (
     <Container>
@@ -131,40 +118,36 @@ const Three = () => {
           </Controls>
         </HeadingWithControl>
         <CardSlider ref={setSliderRef} {...sliderSettings}>
-          {cards.map((card, index) => (
-            <Card key={index}>
-              <CardImage imageSrc={card.imageSrc} />
+          {alojamientos.map(tipo =>
+            <Card key={tipo.id}>
+              <CardImage imageSrc= "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/f6/76/db/cabanas-cumelen.jpg?w=900&h=-1&s=1" />
               <TextInfo>
                 <TitleReviewContainer>
-                  <Title>{card.title}</Title>
+                  <Title>{tipo.TipoAlojamiento && tipo.TipoAlojamiento.tipo_alojamiento}</Title>
                 </TitleReviewContainer>
                 <SecondaryInfoContainer>
-                
+
                   <IconWithText>
                     <IconContainer>
                       <Wifi />
                     </IconContainer>
-                  </IconWithText>
 
-                  <IconWithText>
                     <IconContainer>
                       <TV />
                     </IconContainer>
-                  </IconWithText>
 
-                  <IconWithText>
                     <IconContainer>
                       <Users />
                     </IconContainer>
-                    <Text>{card.userText}</Text>
+                    <Text>{tipo.capacidad}</Text>
                   </IconWithText>
 
                 </SecondaryInfoContainer>
-                <Description>{card.description}</Description>
+                <Description>{tipo.descripcion}</Description>
               </TextInfo>
-              <PrimaryButton>Más información</PrimaryButton>
+              <a href="/elalgarrobo.com.ar/alojamiento-detalle"><PrimaryButton>Más información</PrimaryButton></a>
             </Card>
-          ))}
+          )}
         </CardSlider>
       </Content>
     </Container>

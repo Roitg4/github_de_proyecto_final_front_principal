@@ -47,7 +47,7 @@ const Footer = () => {
             <LogoText>El Algarrobo.</LogoText>
           </LogoContainer>
           <CompanyDescription>
-            El Algarrobo es una empresa S.R.L de un Complejo Vacacional que ofrece a sus huespedes los mejores servicios de hoteleria.
+            El Algarrobo es un Complejo Vacacional que ofrece a sus huespedes los mejores servicios en hoteleria.
           </CompanyDescription>
           <SocialLinksContainer>
             <SocialLink target={"_blank"} href="https://facebook.com">
@@ -65,13 +65,13 @@ const Footer = () => {
           <ColumnHeading>Enlaces rápidos</ColumnHeading>
           <LinkList>
             <LinkListItem>
-              <Link to="/elalgarrobo.com.ar/inicio"><LinksEstilo>Inicio</LinksEstilo></Link>
+              <a href="/elalgarrobo.com.ar/inicio"><LinksEstilo>Inicio</LinksEstilo></a>
             </LinkListItem>
             <LinkListItem>
               <Link to="#"><LinksEstilo>Alojamientos</LinksEstilo></Link>
             </LinkListItem>
             <LinkListItem>
-              <Link to="#"><LinksEstilo>Contacto</LinksEstilo></Link>
+              <a href="/elalgarrobo.com.ar/consulta-y-contacto"><LinksEstilo>Consulta</LinksEstilo></a>
             </LinkListItem>
           </LinkList>
         </Column>
@@ -79,10 +79,7 @@ const Footer = () => {
           <ColumnHeading>Acciones</ColumnHeading>
           <LinkList>
             <LinkListItem>
-              <Link to="/elalgarrobo.com.ar/login"><LinksEstilo>Iniciar Sesión</LinksEstilo></Link>
-            </LinkListItem>
-            <LinkListItem>
-              <Link to="/elalgarrobo.com.ar/register"><LinksEstilo>Registrarse</LinksEstilo></Link>
+              <Link to="#"><LinksEstilo>Reservar</LinksEstilo></Link>
             </LinkListItem>
           </LinkList>
         </Column>
@@ -90,13 +87,13 @@ const Footer = () => {
           <ColumnHeading>Legal</ColumnHeading>
           <LinkList>
             <LinkListItem>
-              <Link to="#">SGC</Link>
+              <Link to="#"><LinksEstilo>SGC</LinksEstilo></Link>
             </LinkListItem>
             <LinkListItem>
-              <Link to="/elalgarrobo.com.ar/politica-de-privacidad"><LinksEstilo>Política de Privacidad</LinksEstilo></Link>
+              <a href="/elalgarrobo.com.ar/politica-de-privacidad"><LinksEstilo>Política de Privacidad</LinksEstilo></a>
             </LinkListItem>
             <LinkListItem>
-              <Link to="/elalgarrobo.com.ar/terminos-y-condiciones"><LinksEstilo>Terminos y Condiciones</LinksEstilo></Link>
+              <a href="/elalgarrobo.com.ar/terminos-y-condiciones"><LinksEstilo>Terminos y Condiciones</LinksEstilo></a>
             </LinkListItem>
           </LinkList>
         </Column>

@@ -14,11 +14,11 @@ const Container = tw.div`relative`;
 const Content = tw.div`max-w-screen-xl mx-auto py-20 lg:py-24`;
 const HeadingInfoContainer = tw.div`flex flex-col items-center`;
 
-const TestimonialSliderContainer = tw.div`mt-24`;
+const TestimonialSliderContainer = tw.div`mt-10`;
 const TestimonialSlider = styled(Slider)``;
 const Testimonial = tw.div`flex! flex-col items-center md:items-stretch md:flex-row md:justify-center outline-none`;
 const ImageContainer = styled.div`
-  ${tw` ml-2 md:mx-5 lg:mx-8 w-2/3 md:w-4/12 flex items-center max-w-xs md:max-w-none`}
+  ${tw`bg-center md:flex sm:flex flex`} /* ml-2 md:mx-5 lg:mx-8 w-2/3 md:w-4/12 flex items-center max-w-xs md:max-w-none */
   img {
     ${tw`rounded-3xl`}
   }
@@ -35,7 +35,7 @@ const SliderControlButtonContainer = styled.div`
 `;
 
 const ControlButton = styled(PrimaryButtonBase)`
-  ${tw`mt-4 sm:mt-0 first:ml-0 ml-6 rounded-full p-2`}
+  ${tw`sm:mt-0 first:ml-0 rounded-full p-2`}
   svg {
     ${tw`w-6 h-6`}
   }
@@ -44,18 +44,18 @@ const PrevButton = tw(ControlButton)``;
 const NextButton = tw(ControlButton)``;
 
 const NextArrow = ({ currentSlide, slideCount, ...props }) => (
-    <SliderControlButtonContainer tw="right-0">
-      <button {...props}>
-        <NextButton><ChevronRightIcon /></NextButton>
-      </button>
-    </SliderControlButtonContainer>
+  <SliderControlButtonContainer tw="right-0">
+    <button {...props}>
+      <NextButton><ChevronRightIcon /></NextButton>
+    </button>
+  </SliderControlButtonContainer>
 );
 const PreviousArrow = ({ currentSlide, slideCount, ...props }) => (
-    <SliderControlButtonContainer tw="left-0">
-      <button {...props}>
-        <PrevButton><ChevronLeftIcon /></PrevButton>
-      </button>
-    </SliderControlButtonContainer>
+  <SliderControlButtonContainer tw="left-0">
+    <button {...props}>
+      <PrevButton><ChevronLeftIcon /></PrevButton>
+    </button>
+  </SliderControlButtonContainer>
 );
 
 const Two = () => {
@@ -66,16 +66,20 @@ const Two = () => {
   const testimonials = [
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3.25&w=512&h=512&q=80"
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/116736420.jpg?k=81983cd9ea71a4172a515e609767fc1eea51f68deeb37a5daf16190b66424d40&o=&hp=1"
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=512&h=512&q=80"
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/287008926.jpg?k=1a63cd4b6de7fcf34e20863b432ca5e536ad076076fb627d413e7f1518f995fd&o=&hp=1"
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1580852300654-03c803a14e24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4.25&w=512&h=512&q=80"
-    }
+        "https://www.nubacabanias.com.ar/fotos/cabania.jpg"
+    },
+    {
+      imageSrc:
+        "https://www.demartis.com.ar/backend/pages/uploads/1603998276-1.jpg"
+    },
   ];
   return (
     <Container>
@@ -84,7 +88,8 @@ const Two = () => {
           <HeadingTitle>Complejo Vacacional</HeadingTitle>
         </HeadingInfoContainer>
         <TestimonialSliderContainer>
-          <TestimonialSlider nextArrow={<NextArrow />} prevArrow={<PreviousArrow />}>
+          <TestimonialSlider
+            nextArrow={<NextArrow />} prevArrow={<PreviousArrow />}>
             {testimonials.map((testimonial, index) => (
               <Testimonial key={index}>
                 <ImageContainer>

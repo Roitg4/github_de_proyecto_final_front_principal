@@ -81,11 +81,11 @@ const Light = ({ roundedHeaderButton = false, logoLink, links, className, collap
   const defaultLinks = [
     <NavLinks key={1}>
       <NavLink><Link to="/elalgarrobo.com.ar/inicio">Inicio</Link></NavLink>
-      <NavLink><Link to="/elalgarrobo.com.ar/alojamientos">Alojamientos</Link></NavLink>
-      <NavLink><Link to="#">Consulta</Link></NavLink>
-      <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} tw="lg:mx-2!"><Link to="/elalgarrobo.com.ar/login">Iniciar Sesión
-      </Link></PrimaryLink>
-      <SecundaryLink css={roundedHeaderButton && tw`rounded-full`}><Link to="/elalgarrobo.com.ar/register">Registrarse</Link></SecundaryLink>
+      <NavLink><Link to="#">Alojamientos</Link></NavLink>
+      <NavLink><Link to="/elalgarrobo.com.ar/consulta-y-contacto">Consulta</Link></NavLink>
+      <NavLink><Link to="#">Reservas</Link></NavLink>
+      {/* <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} tw="lg:mx-2!"><Link to="/elalgarrobo.com.ar/login">Iniciar Sesión
+      </Link></PrimaryLink> */}
     </NavLinks>
   ];
 

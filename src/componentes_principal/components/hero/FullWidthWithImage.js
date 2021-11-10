@@ -46,8 +46,8 @@ const Full = ({
   navLinks = [
     <NavLinks key={1}>
       <NavLink><Link to="/elalgarrobo.com.ar/inicio">Inicio</Link></NavLink>
-      <NavLink><Link to="/elalgarrobo.com.ar/alojamientos">Alojamientos</Link></NavLink>
-      <NavLink><Link to="#">Consulta</Link></NavLink>
+      <NavLink><Link to="#">Alojamientos</Link></NavLink>
+      <NavLink><Link to="/elalgarrobo.com.ar/consulta-y-contacto">Consulta</Link></NavLink>
     </NavLinks>
   ],
   heading = (
@@ -58,11 +58,11 @@ const Full = ({
       <span tw="text-green-600"> El Algarrobo</span>
     </>
   ),
-  description = "Un lugar único que hará de su estadía un recuerdo inolvidable. ¡Descubra Calamuchita, descubra El Algarrobo!.",
+  description = "Es un lugar único que hará de su estadía un recuerdo inolvidable. ¡Descubra Calamuchita, descubra El Algarrobo!",
   primaryActionUrl = "/elalgarrobo.com.ar/login",
-  primaryActionText = "Iniciar Sesión",
-  secondaryActionUrl = "/elalgarrobo.com.ar/register",
-  secondaryActionText = "Registrarse"
+  primaryActionText = "Reservar",
+/*   secondaryActionUrl = "/elalgarrobo.com.ar/register",
+  secondaryActionText = "Registrarse" */
 }) => {
   return (
     <Container>
@@ -76,9 +76,9 @@ const Full = ({
               <Link to={primaryActionUrl} className="action primaryAction">
                 {primaryActionText}
               </Link>
-              <Link to={secondaryActionUrl} className="action secondaryAction">
+              {/* <Link to={secondaryActionUrl} className="action secondaryAction">
                 {secondaryActionText}
-              </Link>
+              </Link> */}
             </Actions>
           </Content>
         </LeftColumn>
